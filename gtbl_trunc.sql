@@ -2,7 +2,7 @@ SET PAGESIZE 0 FEEDBACK OFF VERIFY OFF HEADING OFF ECHO OFF
 
 -- Disable triggers
 -- SPOOL disable_triggers.sql
-SELECT 'ALTER table ' || owner || '.' || table_name || ' DISABLE AL TRIGGERS;'
+SELECT 'ALTER table ' || owner || '.' || table_name || ' DISABLE ALL TRIGGERS;'
 FROM all_tables
 WHERE owner = UPPER('&schema_name');
 --SPOOL OFF
@@ -36,7 +36,7 @@ AND constraint_type IN ('P', 'R', 'U', 'C');  -- Primary, Foreign, Unique, Check
 
 -- Enable triggers
 -- SPOOL disable_triggers.sql
-SELECT 'ALTER table ' || owner || '.' || table_name || ' ENABLE AL TRIGGERS;'
+SELECT 'ALTER table ' || owner || '.' || table_name || ' ENABLE ALL TRIGGERS;'
 FROM all_tables
 WHERE owner = UPPER('&schema_name');
 --SPOOL OFF
